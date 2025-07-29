@@ -157,6 +157,42 @@
         </div>
     </footer>
 
+
+    <script>
+        // Make compass follow cursor with smooth animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const compass = document.querySelector('.compass-decoration');
+
+            if (compass) {
+                console.log('Compass element found'); // Debug log
+
+                document.addEventListener('mousemove', function (e) {
+                    // Check if not on mobile
+                    if (window.innerWidth > 768) {
+                        const x = e.clientX;
+                        const y = e.clientY;
+
+                        // Position compass under and to the right of cursor
+                        const offsetX = 20; // To the right of cursor
+                        const offsetY = 20; // Below the cursor
+
+                        compass.style.transform = `translate(${x + offsetX}px, ${y + offsetY}px)`;
+                        compass.style.opacity = '0.3'; // Make it more visible when following cursor
+                    }
+                });
+
+
+                // Hide compass on mobile devices
+                if (window.innerWidth <= 768) {
+                    compass.style.display = 'none';
+                } else {
+                    compass.style.display = 'block';
+                }
+            } else {
+                console.log('Compass element not found'); // Debug log
+            }
+        });
+    </script>
 </body>
 
 </html>
