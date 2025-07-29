@@ -34,3 +34,113 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
 }
+
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--deep-green);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+/* Header and Navigation */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 10;
+    min-height: 320px; /* Accommodate larger logo */
+}
+
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+
+.brand-logo {
+    height: 300px;
+    width: auto;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: var(--forest-green);
+}
+
+
+/* Hero Content */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 2rem 4rem;
+    position: relative;
+    z-index: 5;
+    min-height: calc(100vh - 320px); /* Adjust for navbar height */
+    margin-top: -50px; /* Pull content up slightly */
+}
+
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    font-weight: 300;
+}
