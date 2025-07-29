@@ -1,0 +1,36 @@
+/* Color Palette */
+:root {
+    --cream: #F7F5F0;
+    --cream-dark: #F0EDE6;
+    --sage-green: #9CAF88;
+    --forest-green: #6B8E5A;
+    --deep-green: #4A6741;
+    --compass-bronze: #B8860B;
+    --compass-copper: #CD853F;
+    --text-dark: #2C3E2D;
+    --text-light: #5A6B5D;
+    --accent-gold: #DAA520;
+}
+
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--cream);
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
