@@ -72,6 +72,27 @@ They all came out simplistic and of the same colour scheme which are aesthetical
 <img src="assets/images/favicon.png" alt="favicon for inner compass" />
 </p>
 
+This image was one used in the Carousel, but the colour scheme was also generated from this image for the logo and design throughout the rest of the website.
+
 <p align="center">
 <img src="assets/images/compass.jpg" alt="compass used for inner compass" />
 </p>
+
+# Fun with cursors
+
+I did some background research on google and some other sites on how to have a small moving icon follow around your mouse, much like a Compass would travel with you in your bag and show you the way when you needed it to. It also rotates clockwise, much like a real compass might rotate. It is coloured dark green to fit in with the colour scheme of the website too.
+
+<p align="center">
+<img src="assets/Readme%20images/cursor.png" alt="compass that rotates clockwise and follows the cursor" />
+</p>
+
+# Form submission
+
+I took some inspiration from the forms on bootstrap to create my own form with a submission page, giving the data entry fields errors if they were not filled in correctly. I had copilot help me create a thank-you page with the appropriate response that should be given had the form be a real submission form, but without actually submitting real details anywhere for the safety of this project. Below is the page I took inspiration from, from the Bootstrap site, and used features from a couple of the different forms to achieve my end goal.
+
+https://getbootstrap.com/docs/5.3/forms/overview/
+
+# Overall
+
+The website is informative, interactive and can help the user navigate to sections they need or submit a form to get further help from a "dedicated team".
+I have used Copilot to ensure my work is fully functional too, ensuring that links work and the likes.
