@@ -159,6 +159,94 @@
     </section>
 
 
+    <section class="section contact-form-section">
+        <div class="container">
+            <h2 class="section-title">Connect with Our Mental Health Support Team</h2>
+            <p class="section-description">
+                Ready to take the next step in your mental wellness journey? Fill out the form below and one of our compassionate mental health professionals will reach out to you within 24 hours.
+            </p>
+            <div class="contact-form-wrapper">
+                <form class="mental-health-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredContact">Preferred Contact Method *</label>
+                        <select id="preferredContact" name="preferredContact" required>
+                            <option value="">Please select...</option>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone Call</option>
+                            <option value="text">Text Message</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="supportType">What type of support are you seeking? *</label>
+                        <select id="supportType" name="supportType" required>
+                            <option value="">Please select...</option>
+                            <option value="anxiety">Anxiety & Stress Management</option>
+                            <option value="depression">Depression Support</option>
+                            <option value="mindfulness">Mindfulness-Based Therapy</option>
+                            <option value="general">General Mental Health Information</option>
+                            <option value="crisis">Crisis Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell us a bit about what you're going through (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Share what's on your mind... Everything you share is confidential."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <span class="checkmark"></span>
+                            I understand that this information will be kept confidential and used only to provide mental health support. *
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            I would like to receive mental health tips and resources via email.
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary form-submit-btn">
+                            Send My Request
+                        </button>
+                        <p class="form-note">
+                            * If you're experiencing a mental health crisis, please call <strong>988</strong> immediately or visit your nearest emergency room.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
