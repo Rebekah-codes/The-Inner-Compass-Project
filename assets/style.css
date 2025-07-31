@@ -444,6 +444,10 @@ h1, h2, h3 {
     border: 2px solid var(--sage-green);
     transition: all 0.3s ease;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px; /* Ensures consistent card heights */
 }
 
 
@@ -465,6 +469,11 @@ h1, h2, h3 {
     color: var(--text-light);
     margin-bottom: 1rem;
     line-height: 1.6;
+    flex-grow: 1; /* Allows content to expand and fill space */
+}
+
+.resource-card p:last-child {
+    margin-bottom: 0; /* Remove bottom margin from last paragraph */
 }
 
 
@@ -483,13 +492,14 @@ h1, h2, h3 {
 
 .resource-link {
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: auto; /* Pushes button to bottom of card */
     padding: 0.5rem 1rem;
     background: var(--forest-green);
     color: white !important;
     border-radius: 25px;
     text-decoration: none !important;
     transition: all 0.3s ease;
+    align-self: center; /* Centers the button horizontally */
 }
 
 
