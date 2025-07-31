@@ -280,7 +280,7 @@ h1, h2, h3 {
     border: 1px solid var(--deep-green); /* Changed to green to match logo */
     border-radius: 50%;
     position: relative;
-    animation: slowRotate 60s linear infinite;
+    animation: slowRotate 45s linear infinite;
 }
 
 
