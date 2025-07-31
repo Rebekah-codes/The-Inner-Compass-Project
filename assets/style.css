@@ -762,6 +762,28 @@ html {
     box-shadow: 0 0 0 3px rgba(139, 161, 137, 0.1);
 }
 
+/* Error states */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.error-message::before {
+    content: "⚠";
+    font-size: 0.875rem;
+}
+
 .form-group textarea {
     resize: vertical;
     min-height: 100px;

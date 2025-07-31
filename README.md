@@ -21,3 +21,7 @@ compass image ref 2
 https://unsplash.com/photos/round-white-compass-iDzKdNI7Qgc
 
 compass image ref 3
+
+I have also checked the website through "https://ui.dev/amiresponsive?url=https://rebekah-codes.github.io/The-Inner-Compass-Project/"
+
+<-- Am I responsive - Inner compass image goes here -->

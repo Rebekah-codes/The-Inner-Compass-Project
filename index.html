@@ -166,7 +166,7 @@
                 Ready to take the next step in your mental wellness journey? Fill out the form below and one of our compassionate mental health professionals will reach out to you within 24 hours.
             </p>
             <div class="contact-form-wrapper">
-                <form class="mental-health-form" action="#" method="POST">
+                <form class="mental-health-form" action="thank-you.html" method="GET">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name *</label>
@@ -268,8 +268,117 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Make compass follow cursor with smooth animation
+        // Form validation
         document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('.mental-health-form');
+            const submitBtn = document.querySelector('.form-submit-btn');
+
+            // Custom validation function
+            function validateForm(event) {
+                let isValid = true;
+                const requiredFields = [
+                    { id: 'firstName', name: 'First Name' },
+                    { id: 'lastName', name: 'Last Name' },
+                    { id: 'email', name: 'Email Address' },
+                    { id: 'preferredContact', name: 'Preferred Contact Method' },
+                    { id: 'supportType', name: 'Support Type' },
+                    { id: 'privacy', name: 'Privacy Agreement' }
+                ];
+
+                // Clear previous error messages
+                clearErrorMessages();
+
+                // Validate each required field
+                requiredFields.forEach(field => {
+                    const element = document.getElementById(field.id);
+                    const value = element.type === 'checkbox' ? element.checked : element.value.trim();
+
+                    if (!value) {
+                        showErrorMessage(element, `${field.name} is required`);
+                        isValid = false;
+                    }
+                });
+
+                // Validate email format if email is provided
+                const emailField = document.getElementById('email');
+                if (emailField.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailField.value.trim())) {
+                        showErrorMessage(emailField, 'Please enter a valid email address');
+                        isValid = false;
+                    }
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                    // Scroll to first error
+                    const firstError = document.querySelector('.error-message');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+
+                return isValid;
+            }
+
+            // Show error message function
+            function showErrorMessage(element, message) {
+                // Remove existing error styling
+                element.classList.remove('error');
+                
+                // Add error styling
+                element.classList.add('error');
+                
+                // Create error message element
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = message;
+                
+                // Insert error message after the input element
+                element.parentNode.insertBefore(errorDiv, element.nextSibling);
+            }
+
+            // Clear error messages function
+            function clearErrorMessages() {
+                // Remove error styling from all inputs
+                const inputs = form.querySelectorAll('input, select, textarea');
+                inputs.forEach(input => {
+                    input.classList.remove('error');
+                });
+
+                // Remove all error message elements
+                const errorMessages = form.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => msg.remove());
+            }
+
+            // Add real-time validation (clear errors when user starts typing)
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('error')) {
+                        this.classList.remove('error');
+                        const errorMsg = this.parentNode.querySelector('.error-message');
+                        if (errorMsg) {
+                            errorMsg.remove();
+                        }
+                    }
+                });
+
+                input.addEventListener('change', function() {
+                    if (this.classList.contains('error')) {
+                        this.classList.remove('error');
+                        const errorMsg = this.parentNode.querySelector('.error-message');
+                        if (errorMsg) {
+                            errorMsg.remove();
+                        }
+                    }
+                });
+            });
+
+            // Attach validation to form submit
+            form.addEventListener('submit', validateForm);
+
+            // Make compass follow cursor with smooth animation
             const compass = document.querySelector('.compass-decoration');
 
             if (compass) {

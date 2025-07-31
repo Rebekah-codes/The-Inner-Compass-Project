@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - The Inner Compass</title>
+    <!-- Favicon for modern browsers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <!-- Fallback for older browsers -->
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <!-- Apple touch icon for iOS devices -->
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Color Palette */
+        :root {
+            --cream: #F7F5F0;
+            --sage-green: #9CAF88;
+            --forest-green: #6B8E5A;
+            --deep-green: #4A6741;
+            --text-dark: #2C3E2D;
+            --text-light: #5A6B5D;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--cream) 0%, #f8f6f3 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .thank-you-container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 4rem 3rem;
+        }
+
+        .checkmark-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--forest-green);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .checkmark {
+            width: 40px;
+            height: 40px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .thank-you-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .thank-you-subtitle {
+            font-size: 1.25rem;
+            color: var(--forest-green);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .thank-you-message {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .message-details {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--sage-green);
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .message-details h4 {
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .message-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .message-details li {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .message-details li::before {
+            content: "•";
+            color: var(--sage-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--forest-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--deep-green);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--forest-green);
+            border: 2px solid var(--forest-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--forest-green);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .crisis-notice {
+            background: #fff3cd;
+            border: 1px solid #ffd93d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .crisis-notice strong {
+            color: #d63384;
+            font-weight: 600;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 3rem 2rem;
+                margin: 1rem;
+            }
+            
+            .thank-you-title {
+                font-size: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .thank-you-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .thank-you-title {
+                font-size: 1.75rem;
+            }
+            
+            .thank-you-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="thank-you-container">
+        <div class="checkmark-container">
+            <div class="checkmark">✓</div>
+        </div>
+        
+        <h1 class="thank-you-title">Thank You!</h1>
+        <h2 class="thank-you-subtitle">Your request has been sent successfully</h2>
+        
+        <p class="thank-you-message">
+            We've received your mental health support request and truly appreciate you reaching out. 
+            Taking this step shows incredible strength and self-awareness.
+        </p>
+
+        <div class="message-details">
+            <h4>What happens next:</h4>
+            <ul>
+                <li>A qualified mental health professional will review your request</li>
+                <li>You'll receive a response within 24 hours via your preferred contact method</li>
+                <li>All information shared is completely confidential</li>
+                <li>We'll work together to find the best support for your needs</li>
+            </ul>
+        </div>
+
+        <div class="action-buttons">
+            <a href="index.html" class="btn btn-primary">Return to Home</a>
+            <a href="index.html#services" class="btn btn-secondary">Learn About Our Services</a>
+        </div>
+
+        <div class="crisis-notice">
+            <strong>Need immediate help?</strong> If you're experiencing a mental health crisis, 
+            please call <strong>988</strong> (Suicide Prevention Lifeline) or visit your nearest emergency room.
+        </div>
+    </div>
+
+    <script>
+        // Add a subtle animation delay for better user experience
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelector('.thank-you-container').style.animation = 'slideInUp 0.6s ease-out';
+            }, 100);
+        });
+
+        // Optional: Auto-redirect after a long delay (uncomment if desired)
+        // setTimeout(function() {
+        //     window.location.href = 'index.html';
+        // }, 30000); // Redirect after 30 seconds
+    </script>
+</body>
+
+</html>
