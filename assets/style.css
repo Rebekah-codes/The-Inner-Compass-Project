@@ -1,3 +1,9 @@
+/* 
+ * W3C Compliant CSS for The Inner Compass
+ * Includes vendor prefixes for cross-browser compatibility
+ * and fallback colors for browsers that don't support CSS variables
+ */
+
 /* Color Palette */
 :root {
     --cream: #F7F5F0;
@@ -10,6 +16,13 @@
     --text-dark: #2C3E2D;
     --text-light: #5A6B5D;
     --accent-gold: #DAA520;
+}
+
+/* Fallback colors for older browsers that don't support CSS variables */
+html {
+    /* These will be overridden by CSS variables in supporting browsers */
+    color: #2C3E2D; /* --text-dark fallback */
+    background-color: #F7F5F0; /* --cream fallback */
 }
 
 
@@ -27,6 +40,10 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    /* Fallback color */
+    color: #2C3E2D;
+    background-color: #F7F5F0;
+    /* CSS variable colors (will override fallbacks in supporting browsers) */
     color: var(--text-dark);
     background-color: var(--cream);
     overflow-x: hidden; /* Prevent horizontal scroll */
@@ -50,6 +67,9 @@ h1, h2, h3 {
 
 .hero-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
+    /* Fallback color */
+    color: #2C3E2D;
+    /* CSS variable color */
     color: var(--text-dark);
     margin-bottom: 1rem;
     text-align: center;
@@ -58,6 +78,9 @@ h1, h2, h3 {
 
 .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
+    /* Fallback color */
+    color: #4A6741;
+    /* CSS variable color */
     color: var(--deep-green);
     text-align: center;
     margin-bottom: 2rem;
@@ -110,6 +133,10 @@ h1, h2, h3 {
     background: rgba(255, 255, 255, 0.9);
     padding: 1rem 2rem;
     border-radius: 50px;
+    /* Fallback for older browsers */
+    background: rgba(255, 255, 255, 0.9);
+    /* Modern browsers with backdrop filter support */
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -280,6 +307,8 @@ h1, h2, h3 {
     border: 1px solid var(--deep-green); /* Changed to green to match logo */
     border-radius: 50%;
     position: relative;
+    /* Cross-browser animation support */
+    -webkit-animation: slowRotate 60s linear infinite;
     animation: slowRotate 60s linear infinite;
 }
 
@@ -321,8 +350,26 @@ h1, h2, h3 {
 
 
 @keyframes slowRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from { 
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg); 
+    }
+    to { 
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg); 
+    }
+}
+
+/* Webkit prefix for older browsers */
+@-webkit-keyframes slowRotate {
+    from { 
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg); 
+    }
+    to { 
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg); 
+    }
 }
 
 
@@ -492,6 +539,7 @@ h1, h2, h3 {
 .resource-card a:hover {
     color: var(--deep-green);
     text-decoration: underline;
+    text-decoration-color: var(--deep-green);
 }
 
 
@@ -542,6 +590,8 @@ h1, h2, h3 {
 .footer-logo {
     height: 100px; /* 100% larger than original 50px */
     width: auto;
+    /* Cross-browser filter support */
+    -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
 }
 
