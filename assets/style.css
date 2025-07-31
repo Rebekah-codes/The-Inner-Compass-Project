@@ -751,7 +751,7 @@ html {
     font-size: 1rem;
     font-family: inherit;
     transition: all 0.3s ease;
-    background: white;
+    background: #fafafa;
 }
 
 .form-group input:focus,
@@ -812,7 +812,7 @@ html {
     margin: 0;
     padding: 1rem;
     background: #fff3cd;
-    border: 1px solid #ffeaa7;
+    border: 1px solid #ffd93d;
     border-radius: 8px;
     text-align: center;
 }
